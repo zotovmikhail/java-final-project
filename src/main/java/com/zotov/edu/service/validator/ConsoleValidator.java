@@ -8,8 +8,6 @@ import java.util.regex.Pattern;
 
 public class ConsoleValidator implements ValidatorService {
 
-  private static final char FLOAT_POINT = '.';
-
   private static final String FLOAT_DIGITS_PATTERN = "[0-9.]*";
 
   public ConsoleValidator() {
