@@ -1,8 +1,8 @@
 package com.zotov.edu.service.parser;
 
-import com.zotov.edu.service.calculate.CalculateService;
 import com.zotov.edu.model.Operator;
 import com.zotov.edu.model.PolishNotationStorage;
+import com.zotov.edu.service.calculate.CalculateService;
 
 public class StringParserService implements ParserService {
 
@@ -13,7 +13,7 @@ public class StringParserService implements ParserService {
   }
 
   @Override
-  public String parseString(String expression) {
+  public String parseString(String expression) throws NumberFormatException{
     PolishNotationStorage polishNotationStorage = this.parseHighPriorityOperations(expression);
 
     if (polishNotationStorage.hasOperators()) {
