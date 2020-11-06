@@ -2,9 +2,9 @@ package com.zotov.edu;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.zotov.edu.service.exception.InvalidInputException;
-import com.zotov.edu.service.exception.InvalidOperatorsOrderException;
-import com.zotov.edu.service.exception.MultipleOperationsException;
+import com.zotov.edu.exception.InvalidInputException;
+import com.zotov.edu.exception.InvalidOperatorsOrderException;
+import com.zotov.edu.exception.MultipleOperationsException;
 import com.zotov.edu.service.validator.ConsoleValidator;
 import com.zotov.edu.service.validator.ValidatorService;
 import org.junit.jupiter.api.BeforeEach;
