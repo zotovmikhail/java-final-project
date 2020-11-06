@@ -8,7 +8,10 @@ import java.util.regex.Pattern;
 
 public class ConsoleValidator implements ValidatorService {
 
-  private static final String FLOAT_DIGITS_PATTERN = "[0-9|.]*";
+  private static final String FLOAT_DIGITS_PATTERN = "[0-9.]*";
+
+  public ConsoleValidator() {
+  }
 
   @Override
   public void validateExpression(String expression) {
@@ -56,6 +59,4 @@ public class ConsoleValidator implements ValidatorService {
     return this;
   }
 
-  public ConsoleValidator() {
-  }
 }
