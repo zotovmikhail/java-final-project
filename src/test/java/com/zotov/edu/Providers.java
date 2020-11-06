@@ -16,4 +16,25 @@ public class Providers {
         Arguments.arguments("1+1*1*1/1-1-1+1+1", "2.0")
     );
   }
+
+  public static Stream<Arguments> testInvalidInput() {
+    return Stream.of(
+        Arguments.arguments("AD WS12"),
+        Arguments.arguments("(1+1)-2")
+    );
+  }
+
+  public static Stream<Arguments> testMultipleOperators() {
+    return Stream.of(
+        Arguments.arguments("1++2-3"),
+        Arguments.arguments("5+-6")
+    );
+  }
+
+  public static Stream<Arguments> testInvalidOperatorsOrder() {
+    return Stream.of(
+        Arguments.arguments("+1+2-3"),
+        Arguments.arguments("5-6-")
+    );
+  }
 }

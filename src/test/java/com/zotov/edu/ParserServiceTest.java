@@ -1,12 +1,10 @@
 package com.zotov.edu;
 
-import com.zotov.edu.service.calculate.CalculateService;
 import com.zotov.edu.service.calculate.SimpleCalculateService;
 import com.zotov.edu.service.parser.ParserService;
 import com.zotov.edu.service.parser.StringParserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 

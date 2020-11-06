@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class ConsoleInputService implements InputService {
 
+  private static final String WHITE_SPACE_PATTERN = "\\s+";
   ValidatorService validatorService;
 
   ParserService parserService;
@@ -19,14 +20,18 @@ public class ConsoleInputService implements InputService {
   @Override
   public void run() {
     while (true) {
-      this.readInput();
+      try {
+        this.readInput();
+      } catch (RuntimeException e) {
+        e.printStackTrace();
+      }
     }
   }
 
   @Override
-  public void readInput() {
+  public void readInput() throws RuntimeException {
     System.out.println("Enter the expression:");
-    String input = new Scanner(System.in).nextLine();
+    String input = new Scanner(System.in).nextLine().replaceAll(WHITE_SPACE_PATTERN, "");
     this.validatorService.validateExpression(input);
     System.out.println("The result: ");
     System.out.println(this.parserService.parseString(input) + "\n");
