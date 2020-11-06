@@ -1,9 +1,9 @@
 package com.zotov.edu.service.validator;
 
-import com.zotov.edu.service.exception.InvalidInputException;
-import com.zotov.edu.service.exception.InvalidOperatorsOrderException;
-import com.zotov.edu.service.exception.MultipleOperationsException;
-import com.zotov.edu.service.model.Operator;
+import com.zotov.edu.exception.InvalidInputException;
+import com.zotov.edu.exception.InvalidOperatorsOrderException;
+import com.zotov.edu.exception.MultipleOperationsException;
+import com.zotov.edu.model.Operator;
 import java.util.regex.Pattern;
 
 public class ConsoleValidator implements ValidatorService {

@@ -1,9 +1,9 @@
 package com.zotov.edu.service.calculate;
 
-import com.zotov.edu.service.exception.InvalidOperationException;
-import com.zotov.edu.service.exception.UnknownOperatorException;
-import com.zotov.edu.service.model.Operator;
-import com.zotov.edu.service.model.PolishNotationStorage;
+import com.zotov.edu.exception.InvalidOperationException;
+import com.zotov.edu.exception.UnknownOperatorException;
+import com.zotov.edu.model.Operator;
+import com.zotov.edu.model.PolishNotationStorage;
 
 public class SimpleCalculateService implements CalculateService {
 
