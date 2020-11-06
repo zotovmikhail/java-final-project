@@ -1,4 +1,4 @@
-package com.zotov.edu.service.model;
+package com.zotov.edu.model;
 
 import java.util.ArrayList;
 import java.util.List;

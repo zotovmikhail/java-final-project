@@ -1,8 +1,8 @@
 package com.zotov.edu.service.parser;
 
 import com.zotov.edu.service.calculate.CalculateService;
-import com.zotov.edu.service.model.Operator;
-import com.zotov.edu.service.model.PolishNotationStorage;
+import com.zotov.edu.model.Operator;
+import com.zotov.edu.model.PolishNotationStorage;
 
 public class StringParserService implements ParserService {
 

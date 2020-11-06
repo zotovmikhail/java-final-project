@@ -1,4 +1,4 @@
-package com.zotov.edu.service.exception;
+package com.zotov.edu.exception;
 
 public class MultipleOperationsException extends RuntimeException {
 
