@@ -1,7 +1,7 @@
 package com.zotov.edu.service.calculate;
 
-import static com.zotov.edu.service.model.Operator.PLUS;
-
+import com.zotov.edu.service.exception.InvalidOperationException;
+import com.zotov.edu.service.exception.UnknownOperatorException;
 import com.zotov.edu.service.model.Operator;
 import com.zotov.edu.service.model.PolishNotationStorage;
 
@@ -12,19 +12,21 @@ public class SimpleCalculateService implements CalculateService {
 
   @Override
   public Double doOperation(Double firstDigit, Double secondDigit, Operator operator) {
-    if (operator == Operator.PLUS) {
-      return firstDigit + secondDigit;
+    switch (operator) {
+      case PLUS:
+        return firstDigit + secondDigit;
+      case MINUS:
+        return firstDigit - secondDigit;
+      case OBELUS:
+        if (secondDigit == 0) {
+          throw new InvalidOperationException("The second operand should not be 0 when division");
+        }
+        return firstDigit / secondDigit;
+      case TIMES:
+        return firstDigit * secondDigit;
     }
-    if (operator == Operator.MINUS) {
-      return firstDigit - secondDigit;
-    }
-    if (operator == Operator.OBELUS) {
-      return firstDigit / secondDigit;
-    }
-    if (operator == Operator.TIMES) {
-      return firstDigit * secondDigit;
-    }
-    return (double) 0;
+
+    throw new UnknownOperatorException("Please add the case for operator: " + operator.getSymbol());
   }
 
   @Override

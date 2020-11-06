@@ -1,5 +1,8 @@
 package com.zotov.edu.service.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum Operator {
   PLUS('+', 1),
   MINUS('-', 1),
@@ -20,5 +23,31 @@ public enum Operator {
 
   public int getPriority() {
     return priority;
+  }
+
+  public static List<Character> getAvailableOperators() {
+    List<Character> availableOperators = new ArrayList<>();
+    for (Operator operator : Operator.values()) {
+      availableOperators.add(operator.getSymbol());
+    }
+    return availableOperators;
+  }
+
+  public static Operator getOperator(char c) {
+    for (Operator operator : Operator.values()) {
+      if (operator.getSymbol() == c) {
+        return operator;
+      }
+    }
+    return null;
+  }
+
+  public static boolean isOperator(char c) {
+    for (Operator operator : Operator.values()) {
+      if (operator.getSymbol() == c) {
+        return true;
+      }
+    }
+    return false;
   }
 }

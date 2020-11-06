@@ -1,14 +1,12 @@
 package com.zotov.edu.service.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 public class PolishNotationStorage {
 
-  private Stack<Operator> stack = new Stack<>();
+  private final Stack<Operator> stack = new Stack<>();
 
-  private Stack<Double> digits = new Stack<>();
+  private final Stack<Double> digits = new Stack<>();
 
   public PolishNotationStorage() {
   }
@@ -37,7 +35,7 @@ public class PolishNotationStorage {
     this.digits.push(digit);
   }
 
-  public int getSize() {
+  public int getNumberOfDigits() {
     return this.digits.size();
   }
 
@@ -56,5 +54,9 @@ public class PolishNotationStorage {
 
   public String getResult() {
     return String.valueOf(this.getLastDigit());
+  }
+
+  public boolean hasOperators() {
+    return !this.stack.empty();
   }
 }
